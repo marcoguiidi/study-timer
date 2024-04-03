@@ -14,9 +14,6 @@ input{
   width: 10vw;
   min-width: 20px;
   border-radius: 10px;
-  border: solid 1px gray;
-  background-color: black;
-  color: white;
   text-align: center;
 }
 

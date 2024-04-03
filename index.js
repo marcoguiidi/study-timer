@@ -78,7 +78,7 @@ document.getElementById('studyForm').addEventListener('submit', function(event) 
           
           // Pulisce il testo dell'elemento con id 'timerDisplay'
           document.getElementById('timerDisplay').textContent = ""; 
-        }, 3000);
+        }, 7000);
         return;
       }
 
