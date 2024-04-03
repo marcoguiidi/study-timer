@@ -7,6 +7,9 @@ document.getElementById('studyForm').addEventListener('submit', function(event) 
     const studyTime = parseInt(document.getElementById('studyTime').value, 10);
     // Converte i minuti in secondi per l'animazione
     const animationDuration = studyTime * 60; 
+
+
+    const audio = new Audio('timer_sound.mp3');
   
     // Imposta l'animazione con durata dinamica per gli pseudo-elementi ::before e ::after
     const styleSheet = document.createElement("style");
@@ -48,6 +51,11 @@ document.getElementById('studyForm').addEventListener('submit', function(event) 
     // Se la differenza è minore o uguale a 0, ferma l'intervallo
     if (difference <= 0) {
       clearInterval(interval);
+      
+      // audio.play();
+      // const delay = (n) => new Promise(r => setTimeout(r, n * 1000));
+      // delay(2);
+      // audio.pause();
 
       const styleSheet = document.createElement("style");
       styleSheet.innerText = `
