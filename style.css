@@ -78,6 +78,15 @@ button:active{
   opacity: 0.75;
 }
 
+#music{
+  background-color: transparent;
+  width: 10px;
+  color: white;
+  opacity: 0.6;
+  text-align: center;
+  border: 0px;
+}
+
 @keyframes bg{
   0% {
     background-color: rgb(227, 5, 5);

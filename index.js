@@ -1,10 +1,14 @@
-
+let bgMusic = false;
 
 // Aggiunge un listener per l'evento di submit al form con id 'studyForm'
 document.getElementById('studyForm').addEventListener('submit', function(event) {
     // Previene il comportamento di default dell'evento, che sarebbe il submit del form
     event.preventDefault();
-  
+
+    let music = document.getElementById("inAudio");
+    if(bgMusic){
+      music.play();
+    }
     // Ottiene il tempo di studio inserito dall'utente e lo converte in un numero intero
     const studyTime = parseInt(document.getElementById('studyTime').value, 10);
     // Converte i minuti in secondi per l'animazione
@@ -48,6 +52,7 @@ document.getElementById('studyForm').addEventListener('submit', function(event) 
       // Se la differenza è minore o uguale a 0, ferma l'intervallo
       if (difference <= 0) {
         clearInterval(interval);
+        music.pause()
         
         let audio = document.getElementById("endAudio");
         audio.play();
@@ -88,4 +93,29 @@ document.getElementById('studyForm').addEventListener('submit', function(event) 
     }, 1000);
   });
 
+document.getElementById("music").addEventListener("click", function(event){
+  event.preventDefault();
+
+  if (bgMusic){
+    bgMusic = false;
+    const styleSheet = document.createElement("style");
+    styleSheet.innerText = `
+    #music{
+      opacity: 0.6;
+    }
+    `;
+    // Aggiunge il foglio di stile creato all'elemento head del documento
+    document.head.appendChild(styleSheet);
+  } else {
+    bgMusic = true;
+    const styleSheet = document.createElement("style");
+    styleSheet.innerText = `
+    #music{
+      opacity: 1;
+    }
+    `;
+    // Aggiunge il foglio di stile creato all'elemento head del documento
+    document.head.appendChild(styleSheet);
+  }
+});
   
