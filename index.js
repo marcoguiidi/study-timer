@@ -74,7 +74,6 @@ document.getElementById('studyForm').addEventListener('submit', function(event) 
             visibility: hidden;
           }
           `;
-          // Aggiunge il foglio di stile creato all'elemento head del documento
           document.head.appendChild(styleSheet);
           
           // Pulisce il testo dell'elemento con id 'timerDisplay'
@@ -96,7 +95,8 @@ document.getElementById('studyForm').addEventListener('submit', function(event) 
 document.getElementById("music").addEventListener("click", function(event){
   event.preventDefault();
 
-  if (bgMusic){
+  //evidenzia il pulsante in maniera differente in base alla selezione
+  if (bgMusic){  
     bgMusic = false;
     const styleSheet = document.createElement("style");
     styleSheet.innerText = `
@@ -104,7 +104,6 @@ document.getElementById("music").addEventListener("click", function(event){
       opacity: 0.6;
     }
     `;
-    // Aggiunge il foglio di stile creato all'elemento head del documento
     document.head.appendChild(styleSheet);
   } else {
     bgMusic = true;
@@ -114,7 +113,6 @@ document.getElementById("music").addEventListener("click", function(event){
       opacity: 1;
     }
     `;
-    // Aggiunge il foglio di stile creato all'elemento head del documento
     document.head.appendChild(styleSheet);
   }
 });
