@@ -1,0 +1,128 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    z-index: 2;
+    overflow: hidden;
+    background-color: rgba(152, 121, 28, 0.603);
+}
+
+input{
+  width: 10vw;
+  min-width: 20px;
+  border-radius: 10px;
+  border: solid 1px gray;
+  background-color: black;
+  color: white;
+  text-align: center;
+}
+
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none; /*to hide number buttons*/
+}
+
+button{
+  height: 5vh;
+  width: 10vw;
+  min-width: 10px;
+  border-radius: 5px;
+  border: solid 0px;
+  padding: 2px;
+  margin: 2px;
+  text-align: center;
+}
+
+button:hover{
+  border: solid 1px;
+}
+
+button:active{
+  opacity: 0.5;
+}
+
+#start{
+  background-color: rgb(35, 187, 35);
+  color: green;
+}
+
+#stop{
+  background-color: red;
+  color: rgb(157, 6, 6);
+  /* display: none; */
+  visibility: hidden;
+}
+
+#studyForm {
+  position: center;
+  text-align: center;
+}
+
+#clock {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  /* animazione che faccia comparire il timer */
+}
+
+.timer {
+  display: none;
+  font-size: 700%;
+  z-index: 1;
+  color: black;
+  opacity: 0.75;
+}
+
+@keyframes bg{
+  0% {
+    background-color: rgb(227, 5, 5);
+  }
+
+  25%{
+    background-color: orange;
+  }
+
+  50%{
+    background-color: yellow;
+  }
+
+  75%{
+    background-color: green;
+  }
+
+  97%{
+    background-color: blue;
+  }
+
+  100%{
+    background-color: black;
+  }
+}
+
+@keyframes timer{
+  0%{
+    opacity: 0;
+    font-size: 100%;
+  }
+
+  100%{
+    opacity: 0.75;
+    font-size: 700%;
+  }
+}
+
+@keyframes sButton {
+  80%{
+    opacity: 0.7;
+  }
+
+  100%{
+    opacity: 0.3;
+  }
+}
+
