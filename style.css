@@ -66,7 +66,6 @@ button:active{
   justify-content: center;
   align-items: center;
   margin: 20px;
-  /* animazione che faccia comparire il timer */
 }
 
 .timer {
@@ -75,6 +74,15 @@ button:active{
   z-index: 1;
   color: black;
   opacity: 0.75;
+}
+
+#pause {
+  width: 200px;
+  height: 200px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
 }
 
 #music{
