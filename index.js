@@ -60,6 +60,27 @@ document.getElementById('studyForm').addEventListener('submit', function(event) 
       const seconds = Math.floor((difference % (1000 * 60)) / 1000);
       document.getElementById('timerDisplay').textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
     });
+
+    document.getElementById("stop").addEventListener("click", function(event){
+      event.preventDefault();
+    
+      // Interrompi il timer e rimuovi eventuali fogli di stile aggiunti
+      clearInterval(studyInterval);
+      clearInterval(pauseInterval);
+      music.pause();
+      document.getElementById("timerDisplay").textContent = "00:00";
+      document.getElementById("pauseTimer").textContent = "00:00";
+      removeStyleSheet(styleSheet);
+    
+      // Ripristina lo stato iniziale
+      contatore = 0;
+      document.getElementById("task").textContent = "";
+      document.getElementById("stop").style.visibility = "hidden";
+      document.getElementById("pause").style.display = "none";
+      document.getElementById("clock").style.display = "block";
+      document.getElementById("studyForm").reset(); // Reimposta i valori del form
+    });
+    
   }
   
   function avviaPausa() {
